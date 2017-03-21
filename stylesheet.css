@@ -1,0 +1,247 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+___________________________________________________________________________________________________________________
+Custom
+*/
+
+body {
+  font-family: 'Lora', serif;
+}
+
+.logo, .sub-logo {
+  color: #cc1013;;
+  text-align: left;
+  font-family: 'Lora', serif;
+}
+
+.logo {
+  font-size: 40px;
+  margin: 0;
+  line-height: 45px;
+}
+
+.logo:visited {
+  text-decoration: none;
+  color: #cc1013;;
+}
+
+.logo:hover, .logo:active {
+  text-decoration: none;
+  color: #961b25;
+}
+
+.sub-logo {
+  font-size: 15px;
+  margin: 5px 0 10px 0;
+  letter-spacing: .5px;
+}
+
+body {
+  background-color: #fff;
+  font-color: #d31d1d;
+}
+
+.new-tweets-btn {
+  border-radius: 7px;
+  color: #fff;
+  background-color: #b2b2b2;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 0 7px 0;
+  text-align: center;
+  width: 100%;
+  height: 32px;
+  align-content: center;
+  font-size: 15px;
+  font-family: 'Lora', serif;
+  text-shadow: none;
+  line-height: 32px;
+}
+
+.new-tweets-btn:hover {
+  background-color: #676c75;
+  transition: background-color 200ms linear;
+}
+
+
+.container {
+  width: auto;
+  margin: 0;
+  padding-left: 60px;
+  padding-right: 60px;
+  background-color: #f9f2f2;
+  font-family: 'Lora', serif;
+}
+
+.tweet-feed-label {
+  text-align: left;
+  margin-left: 50px;
+  font-family: 
+}
+
+.region {
+  text-align: center;
+
+}
+
+.slogan {
+  text-align: left;
+  margin: 15px 0 0 0;
+  font-style: none;
+  font-size: 15px;
+  border-radius: 9px;
+  color: #505660;
+}
+
+.col-1-5 {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.col-4-5 {
+  width: 80%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.col-1-3 {
+  width: 33%;
+  text-align: center;
+}
+
+.btn {
+  border-radius: 6px;
+  background-color: #b2b2b2;
+  color: #fff;
+  display: inline-block;
+  margin: 10px 23px;
+  width: 25%;
+  height: 30px;
+  line-height: 30px;
+
+}
+
+.btn:hover {
+  background-color: #676c75;
+  transition: background-color 200ms linear;
+  cursor: pointer;
+}
+
+.row {
+  min-width: 1000px;
+  min-height: 50px;
+  padding: 15px 0;
+  align-content: center;
+}
+
+.row-region {
+  min-width: 333.3px;
+  align-content: center;
+}
+
+
+.grid {
+  padding: 0 15px;
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.grid-region {
+  width: 333.3px;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+.tweets {
+  color: #505660;
+  font-size: 20px;
+  line-height: 20px;
+  margin: 0 0 3px 12px;
+}
+
+.region-map {
+  width: 25%;
+  height: auto;
+  padding: 25px;
+  border-radius: 15px;
+  display: block-value;
+}
+
+.timeAndDate {
+  font-size: 10px;
+  color: #80858e;
+  padding-left: 15px;
+  margin: 0 0 10px 0;
+}
+
+.user-class {
+  
+}
+
+.tweet-area {}
+
+img {
+  align-content: center;
+}
+
+.twitterUsername {
+  cursor: pointer;
+  color: #cc1013;
+}
+
+.page-title {
+  color: #505660;
+  font-size: 30px;
+  line-height: 30px;
+  margin: 0 0 10px 0;
+  text-align: center;
+}

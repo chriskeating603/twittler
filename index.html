@@ -1,27 +1,162 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <title>Twitter World News</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
   </head>
-  <body>
-    <script>
+  <body id="top" class="container">
+    <header>
+      <section class="row">
+        <div class="grid">
+          <section class="col-1-5">      
+            <h1 class='logo'>
+              <a href="index.html" style="color:#cc1013">Twittler<br>World News</a>
+            </h1>
+            <h2 class="sub-logo">with Chris Keating</h2>
+            <img width='100%' height=auto align="center" src="worldmap4.jpg"></section><!-- 
+           --><section class="col-4-5">
+            <nav class="region">
+              <ul>
+                <li class="btn" href='#'>Local</li>
+                <li class="btn" href='#'>Domestic</li>
+                <li class="btn" href='#'>International</li>
+              </ul>
+              <iframe class='region-map' frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB5iDzS076kITpoEoRmYuE24U0Kw6jYLmA&q=37.783564,-122.408806&zoom=8.38" disableDefaultUI allowfullscreen></iframe><!-- 
+               --><iframe class='region-map' frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB5iDzS076kITpoEoRmYuE24U0Kw6jYLmA&q=39.0465609,-101.3526246&zoom=2.66" allowfullscreen></iframe><!-- 
+               --><iframe class='region-map' frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB5iDzS076kITpoEoRmYuE24U0Kw6jYLmA&q=37.783564,-122.408806&zoom=0"></iframe>
+            </nav></section><!--   
+          --><section class="col-1-4">
+            
+          </section>
+        </div>
+      </section>
+    </header>
+    <p class="page-title">World News</p>
+    <p class="new-tweets-btn">Click Here for New Tweets</p>
+    <div class="tweet-area"></div>
 
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
-
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
+    <script>$(document).ready(function(){
+      var $body = $('body');
+      var index = streams.home.length - 1;
+      while(index >= 0){
+        var tweet = streams.home[index];
+        var $tweet = $('<div></div>');
+        var date = $('<div></div')
+        var $tweet2 = $('<div></div>');
+        date.text('on ' + tweet.created_at).addClass('timeAndDate');
+        $tweet.text('@' + tweet.user).addClass('twitterUsername').addClass(tweet.user);
+        $tweet2.text('' + tweet.message).addClass('tweets');
+        $tweet2.appendTo($tweet);
+        date.appendTo($tweet);
+        $tweet.prependTo('.tweet-area');
+        index -= 1;
+      }
+      var oldStreamLastIndex = streams.home.length - 1;
+      $('.new-tweets-btn').on('click', function () {
+        index = streams.home.length - 1;
+        for (var i = oldStreamLastIndex + 1; i <= index; i++) {
+          var tweet = streams.home[i];
           var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
+          var $tweet2 = $('<div></div>');
+          var date = $('<div></div>');
+          date.text('on ' + tweet.created_at).addClass('timeAndDate');
+          $tweet.text('@' + tweet.user).addClass('twitterUsername').addClass(tweet.user);
+          $tweet2.text('' + tweet.message).addClass('tweets');
+          $tweet2.appendTo($tweet);
+          date.appendTo($tweet);
+          $tweet.prependTo('.tweet-area');
+        }
+      oldStreamLastIndex = streams.home.length - 1;
+      });
+      $('.shawndrost').on('click', function () {
+        $('.twitterUsername').text('');
+        $('.tweets').text('');
+        $('.timeAndDate').text('');
+        $('.new-tweets-btn').remove();
+        $('.page-title').text('Breaking News from @shawndrost');
+        var index = streams.users.shawndrost.length - 1;
+        while(index >= 0){
+          var tweet = streams.users.shawndrost[index];
+          var $tweet = $('<div></div>');
+          var date = $('<div></div')
+          var $tweet2 = $('<div></div>');
+          date.text('on ' + tweet.created_at).addClass('timeAndDate');
+          $tweet.text('@' + tweet.user).addClass('twitterUsername').addClass(tweet.user);
+          $tweet2.text('  ' + tweet.message).addClass('tweets');
+          $tweet2.appendTo($tweet);
+          date.appendTo($tweet);
+          $tweet.appendTo('.tweet-area');
           index -= 1;
         }
-
-      });
-
+      })
+      $('.mracus').on('click', function () {
+        $('.twitterUsername').text('');
+        $('.tweets').text('');
+        $('.timeAndDate').text('');
+        $('.new-tweets-btn').remove();
+        $('.page-title').text('Breaking News from @mracus');
+        var index = streams.users.mracus.length - 1;
+        while(index >= 0){
+          var tweet = streams.users.mracus[index];
+          var $tweet = $('<div></div>');
+          var date = $('<div></div')
+          var $tweet2 = $('<div></div>');
+          date.text('on ' + tweet.created_at).addClass('timeAndDate');
+          $tweet.text('@' + tweet.user).addClass('twitterUsername').addClass(tweet.user);
+          $tweet2.text('  ' + tweet.message).addClass('tweets');
+          $tweet2.appendTo($tweet);
+          date.appendTo($tweet);
+          $tweet.appendTo('.tweet-area');
+          index -= 1;
+        }
+      })
+      $('.douglascalhoun').on('click', function () {
+        $('.twitterUsername').text('');
+        $('.tweets').text('');
+        $('.timeAndDate').text('');
+        $('.new-tweets-btn').remove();
+        $('.page-title').text('Breaking News from @douglascalhoun');
+        var index = streams.users.douglascalhoun.length - 1;
+        while(index >= 0){
+          var tweet = streams.users.douglascalhoun[index];
+          var $tweet = $('<div></div>');
+          var date = $('<div></div')
+          var $tweet2 = $('<div></div>');
+          date.text('on ' + tweet.created_at).addClass('timeAndDate');
+          $tweet.text('@' + tweet.user).addClass('twitterUsername').addClass(tweet.user);
+          $tweet2.text('  ' + tweet.message).addClass('tweets');
+          $tweet2.appendTo($tweet);
+          date.appendTo($tweet);
+          $tweet.appendTo('.tweet-area');
+          index -= 1;
+        }
+      })
+      $('.sharksforcheap').on('click', function () {
+        $('.twitterUsername').text('');
+        $('.tweets').text('');
+        $('.timeAndDate').text('');
+        $('.new-tweets-btn').remove();
+        $('.page-title').text('Breaking News from @sharksforcheap');
+        var index = streams.users.sharksforcheap.length - 1;
+        while(index >= 0){
+          var tweet = streams.users.sharksforcheap[index];
+          var $tweet = $('<div></div>');
+          var date = $('<div></div')
+          var $tweet2 = $('<div></div>');
+          date.text('on ' + tweet.created_at).addClass('timeAndDate');
+          $tweet.text('@' + tweet.user).addClass('twitterUsername').addClass(tweet.user);
+          $tweet2.text('  ' + tweet.message).addClass('tweets');
+          $tweet2.appendTo($tweet);
+          date.appendTo($tweet);
+          $tweet.appendTo('.tweet-area');
+          index -= 1;
+        }
+      })
+    });
     </script>
   </body>
 </html>
