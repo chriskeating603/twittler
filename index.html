@@ -38,8 +38,8 @@
     <p class="page-title">World News</p>
     <p class="new-tweets-btn">Click Here for New Tweets</p>
     <div class="tweet-area"></div>
-
-    <script>$(document).ready(function(){
+    <script>
+    $(document).ready(function(){
       var $body = $('body');
       var index = streams.home.length - 1;
       while(index >= 0){
@@ -55,24 +55,7 @@
         $tweet.prependTo('.tweet-area');
         index -= 1;
       }
-      var oldStreamLastIndex = streams.home.length - 1;
-      $('.new-tweets-btn').on('click', function () {
-        index = streams.home.length - 1;
-        for (var i = oldStreamLastIndex + 1; i <= index; i++) {
-          var tweet = streams.home[i];
-          var $tweet = $('<div></div>');
-          var $tweet2 = $('<div></div>');
-          var date = $('<div></div>');
-          date.text('on ' + tweet.created_at).addClass('timeAndDate');
-          $tweet.text('@' + tweet.user).addClass('twitterUsername').addClass(tweet.user);
-          $tweet2.text('' + tweet.message).addClass('tweets');
-          $tweet2.appendTo($tweet);
-          date.appendTo($tweet);
-          $tweet.prependTo('.tweet-area');
-        }
-      oldStreamLastIndex = streams.home.length - 1;
-      });
-      $('.shawndrost').on('click', function () {
+      var shawndrostStream = function () {
         $('.twitterUsername').text('');
         $('.tweets').text('');
         $('.timeAndDate').text('');
@@ -92,8 +75,9 @@
           $tweet.appendTo('.tweet-area');
           index -= 1;
         }
-      })
-      $('.mracus').on('click', function () {
+        $('.shawndrost').on('click', shawndrostStream)
+      }
+      var mracusStream = function () {
         $('.twitterUsername').text('');
         $('.tweets').text('');
         $('.timeAndDate').text('');
@@ -113,8 +97,9 @@
           $tweet.appendTo('.tweet-area');
           index -= 1;
         }
-      })
-      $('.douglascalhoun').on('click', function () {
+        $('.mracus').on('click', mracusStream);
+      }
+      var douglascalhounStream = function () {
         $('.twitterUsername').text('');
         $('.tweets').text('');
         $('.timeAndDate').text('');
@@ -134,8 +119,9 @@
           $tweet.appendTo('.tweet-area');
           index -= 1;
         }
-      })
-      $('.sharksforcheap').on('click', function () {
+        $('.douglascalhoun').on('click', douglascalhounStream);
+      }
+      var sharksforcheapStream = function () {
         $('.twitterUsername').text('');
         $('.tweets').text('');
         $('.timeAndDate').text('');
@@ -155,7 +141,33 @@
           $tweet.appendTo('.tweet-area');
           index -= 1;
         }
-      })
+        $('.sharksforcheap').on('click', sharksforcheapStream);
+      }
+      $('.shawndrost').on('click', shawndrostStream)
+      $('.mracus').on('click', mracusStream);
+      $('.douglascalhoun').on('click', douglascalhounStream);
+      $('.sharksforcheap').on('click', sharksforcheapStream);
+      var oldStreamLastIndex = streams.home.length - 1;
+      $('.new-tweets-btn').on('click', function () {
+        index = streams.home.length - 1;
+        for (var i = oldStreamLastIndex + 1; i <= index; i++) {
+          var tweet = streams.home[i];
+          var $tweet = $('<div></div>');
+          var $tweet2 = $('<div></div>');
+          var date = $('<div></div>');
+          date.text('on ' + tweet.created_at).addClass('timeAndDate');
+          $tweet.text('@' + tweet.user).addClass('twitterUsername').addClass(tweet.user);
+          $tweet2.text('' + tweet.message).addClass('tweets');
+          $tweet2.appendTo($tweet);
+          date.appendTo($tweet);
+          $tweet.prependTo('.tweet-area');
+        }
+        $('.shawndrost').on('click', shawndrostStream)
+        $('.mracus').on('click', mracusStream);
+        $('.douglascalhoun').on('click', douglascalhounStream);
+        $('.sharksforcheap').on('click', sharksforcheapStream);
+        oldStreamLastIndex = streams.home.length - 1;
+      });
     });
     </script>
   </body>
